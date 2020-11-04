@@ -2,7 +2,6 @@
 /* eslint-disable no-use-before-define */
 import React from 'react'
 import styled from 'styled-components'
-import LoginPages from './LoginPages'
 
 const categories = [
   { name: 'Eletrônicos', image_path: '' },
@@ -45,7 +44,6 @@ const Categorias = () => {
           )
         })}
       </div>
-      <LoginPages/>
     </CategoryList>
   )
 }

@@ -2,11 +2,6 @@
 /* eslint-disable no-use-before-define */
 import React from 'react'
 import styled from 'styled-components'
-import {Modal} from 'react-bootstrap';
-import {Button} from 'react-bootstrap';
-import {useState} from 'react';
-import Sign_upButton from './Sign_upButton';
-import LoginPages from '../LoginPages';
 
 const LoginButtons = styled.div`
   display: flex;
@@ -31,38 +26,23 @@ const LoginButtons = styled.div`
       color: #111;
     }
   }
+  .signup {
+    background: #fff;
+    color: purple;
+    &:hover {
+      background: purple;
+      color: yellow;
+    }
+  }
 `
 
 const Login = () => {
-  const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    
   return (
-    <div>
     <LoginButtons>
-      <button className="login" onClick={handleShow}>Login</button>
+      <button className="login">Login</button>
+      <button className="signup">Sign Up</button>
     </LoginButtons>
-    <Sign_upButton/>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Login</Modal.Title>
-        </Modal.Header>
-        <Modal.Body> <LoginPages/> </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-      </div>
   )
 }
 
 export default Login
-
