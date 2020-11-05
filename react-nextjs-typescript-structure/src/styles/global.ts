@@ -1,6 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
+
+body{
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
   * {
     margin: 0;
     padding: 0;
@@ -53,7 +61,7 @@ export default createGlobalStyle`
   h6 {
     margin: 0;
     font-weight: 500;
-    color: #414141;
+    color: #010101;
   }
 
   h1 {
@@ -176,7 +184,7 @@ export default createGlobalStyle`
     min-width: 138px;
     font-weight: 500;
     border: none;
-    background: #414141;
+    background: #010101;
     cursor: pointer;
     line-height: normal;
     -webkit-transition: all 0.3s ease 0s;
@@ -190,14 +198,14 @@ export default createGlobalStyle`
 
   .site-btn.btn-line {
     background: transparent;
-    border: 2px solid #414141;
-    color: #414141;
+    border: 2px solid #010101;
+    color: #010101;
     padding: 12px 20px;
   }
 
   .site-btn.btn-line:hover {
-    background: #b09d81;
-    border: 2px solid #b09d81;
+    background: #69779B;
+    border: 2px solid #69779B;
     color: #fff;
   }
 
@@ -343,7 +351,7 @@ export default createGlobalStyle`
     bottom: -7px;
     padding-top: 3px;
     border-radius: 50px;
-    background: #414141;
+    background: #010101;
     font-size: 12px;
     color: #fff;
   }
@@ -376,7 +384,7 @@ export default createGlobalStyle`
     position: absolute;
     top: calc(50% - 15px);
     width: 100%;
-    color: #414141;
+    color: #010101;
     font-size: 20px;
     padding: 0 40px;
   }
@@ -406,7 +414,7 @@ export default createGlobalStyle`
   .hero-slider .owl-dots .owl-dot {
     width: 7px;
     height: 7px;
-    background: #414141;
+    background: #010101;
     display: inline-block;
     border-radius: 20px;
     margin-left: 13px;
@@ -461,7 +469,7 @@ export default createGlobalStyle`
   }
 
   .hs-item .hs-content h2 span {
-    color: #414141;
+    color: #010101;
   }
 
   .hs-item .hs-content .site-btn {
@@ -532,7 +540,7 @@ export default createGlobalStyle`
     font-size: 14px;
     padding: 20px 10px 0;
     text-align: center;
-    background: #414141;
+    background: #010101;
     z-index: 3;
     opacity: 0;
   }
@@ -558,7 +566,7 @@ export default createGlobalStyle`
   }
 
   .intro-slider .active .intro-item figure {
-    outline: 7px solid #414141;
+    outline: 7px solid #010101;
     outline-offset: -7px;
     -webkit-transform: scale(1.06, 1.07);
     -ms-transform: scale(1.06, 1.07);
@@ -595,7 +603,7 @@ export default createGlobalStyle`
     left: 0;
     width: 100%;
     height: 7px;
-    background: #b09d81;
+    background: #69779B;
     border-radius: 30px;
   }
 
@@ -626,7 +634,7 @@ export default createGlobalStyle`
   .featured-item {
     display: block;
     position: relative;
-    border: 3px solid #b09d81;
+    border: 3px solid #69779B;
   }
 
   .featured-item img {
@@ -641,7 +649,7 @@ export default createGlobalStyle`
     left: calc(50% - 61px);
     bottom: -30px;
     text-transform: uppercase;
-    background: #b09d81;
+    background: #69779B;
   }
 
   /*------------------
@@ -683,7 +691,7 @@ export default createGlobalStyle`
     width: 1px;
     right: -34px;
     top: 3px;
-    background: #414141;
+    background: #010101;
     -webkit-transform: skewX(-20deg);
     -ms-transform: skewX(-20deg);
     transform: skewX(-20deg);
@@ -728,7 +736,7 @@ export default createGlobalStyle`
     font-size: 14px;
     padding: 20px 10px 0;
     text-align: center;
-    background: #414141;
+    background: #010101;
     z-index: 3;
   }
 
@@ -737,12 +745,14 @@ export default createGlobalStyle`
   }
 
   .product-item .pi-meta {
+    display: flex;
+    justify-content: center;
     position: absolute;
     width: 100%;
     bottom: 0;
     left: 0;
     z-index: 1;
-    background: #414141;
+    background: #69779b;
     padding: 10px 0;
     opacity: 0;
     -webkit-transform: translateY(110%);
@@ -790,7 +800,7 @@ export default createGlobalStyle`
   .product-item .product-info p {
     font-size: 24px;
     font-weight: 700;
-    color: #414141;
+    color: #010101;
   }
 
   .product-item .product-info p span {
@@ -985,7 +995,7 @@ export default createGlobalStyle`
   }
 
   .site-breadcrumb span {
-    color: #414141;
+    color: #010101;
   }
 
   .site-pagination a,
@@ -996,7 +1006,7 @@ export default createGlobalStyle`
 
   .site-pagination a.active,
   .site-pagination span.active {
-    color: #414141;
+    color: #010101;
   }
 
   /*------------------
@@ -1021,7 +1031,7 @@ export default createGlobalStyle`
 
   .categorie-filter-warp p {
     display: inline-block;
-    color: #414141;
+    color: #010101;
     padding-top: 3px;
   }
 
@@ -1136,7 +1146,7 @@ export default createGlobalStyle`
 
   .product-content .color-choose span {
     font-size: 14px;
-    color: #414141;
+    color: #010101;
     font-weight: 500;
     float: left;
     margin-right: 24px;
@@ -1222,7 +1232,7 @@ export default createGlobalStyle`
 
   .product-content .size-choose span {
     font-size: 14px;
-    color: #414141;
+    color: #010101;
     font-weight: 500;
     float: left;
     margin-right: 24px;
@@ -1242,7 +1252,7 @@ export default createGlobalStyle`
     text-align: center;
     padding: 7px 5px 8px;
     font-size: 14px;
-    color: #414141;
+    color: #010101;
     font-weight: 500;
     border: 1px solid #dcdfff;
     cursor: pointer;
@@ -1282,12 +1292,12 @@ export default createGlobalStyle`
   .product-details .nav li a {
     font-size: 18px;
     font-weight: 500;
-    color: #414141;
+    color: #010101;
     padding: 5px 0;
   }
 
   .product-details .nav li a.active {
-    border-bottom: 3px solid #b09d81;
+    border-bottom: 3px solid #69779B;
   }
 
   .product-details .tab-pane p {
@@ -1403,7 +1413,7 @@ export default createGlobalStyle`
   }
 
   .cart-buttons .btn-continue {
-    background: #b09d81;
+    background: #69779B;
     padding: 21px 30px;
     min-width: 260px;
     font-size: 16px;
@@ -1413,7 +1423,7 @@ export default createGlobalStyle`
     min-width: 180px;
     padding: 21px 30px;
     background: #ebebeb;
-    color: #414141;
+    color: #010101;
     margin-right: 17px;
     font-size: 16px;
   }
@@ -1450,7 +1460,7 @@ export default createGlobalStyle`
   .shipping-chooes label {
     display: block;
     font-size: 14px;
-    color: #414141;
+    color: #010101;
     margin-bottom: 0;
     padding-left: 35px;
     position: relative;
@@ -1505,7 +1515,7 @@ export default createGlobalStyle`
     top: 0;
     height: 100%;
     min-width: 122px;
-    background: #b09d81;
+    background: #69779B;
   }
 
   .cart-total-details h4 {
@@ -1519,7 +1529,7 @@ export default createGlobalStyle`
   .cart-total-details .btn-full {
     width: 100%;
     font-size: 16px;
-    background: #b09d81;
+    background: #69779B;
     padding: 20px 30px;
   }
 
@@ -1532,7 +1542,7 @@ export default createGlobalStyle`
   .cart-total-card li {
     display: block;
     font-size: 14px;
-    color: #414141;
+    color: #010101;
     padding: 15px 36px;
     margin-bottom: 15px;
   }
@@ -1564,7 +1574,7 @@ export default createGlobalStyle`
     font-size: 14px;
     height: 52px;
     margin-bottom: 25px;
-    color: #414141;
+    color: #010101;
     padding: 5px 20px;
   }
 
@@ -1633,7 +1643,7 @@ export default createGlobalStyle`
   .order-card .btn-full {
     width: 100%;
     font-size: 16px;
-    background: #b09d81;
+    background: #69779B;
     padding: 20px 30px;
     margin-top: 32px;
   }
@@ -1654,7 +1664,7 @@ export default createGlobalStyle`
   .order-table th {
     font-size: 14px;
     font-weight: 400;
-    color: #414141;
+    color: #010101;
   }
 
   .order-table td {
@@ -1683,7 +1693,7 @@ export default createGlobalStyle`
   .payment-method label {
     display: block;
     font-size: 14px;
-    color: #414141;
+    color: #010101;
     margin-bottom: 0;
     padding-left: 30px;
     position: relative;
@@ -1731,7 +1741,7 @@ export default createGlobalStyle`
     font-size: 14px;
     height: 52px;
     margin-bottom: 23px;
-    color: #414141;
+    color: #010101;
     padding: 5px 20px;
   }
 
@@ -1743,7 +1753,7 @@ export default createGlobalStyle`
 
   .contact-form .site-btn {
     font-size: 16px;
-    background: #b09d81;
+    background: #69779B;
     padding: 20px 30px;
     min-width: 215px;
   }
@@ -1783,7 +1793,7 @@ export default createGlobalStyle`
   .contact-card {
     width: 336px;
     padding: 85px 54px 5px;
-    background: #b09d81;
+    background: #69779B;
     margin-left: auto;
   }
 
@@ -1979,7 +1989,7 @@ export default createGlobalStyle`
       float: none;
     }
     .main-menu li a {
-      color: #414141;
+      color: #010101;
       display: block;
       margin-left: 0;
       padding: 15px 20px;

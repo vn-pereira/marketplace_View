@@ -1,15 +1,9 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable no-use-before-define */
 import React from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
+import Header from '../components/Header'
 
 const ContainerProduto = styled.div`
-  padding: 20px 40px;
-  text-align: center;
-  h2 {
-    padding: 30px;
-  }
   .product-item {
     width: 300px;
   }
@@ -18,7 +12,7 @@ const ContainerProduto = styled.div`
   }
 `
 
-export default function Destaques({ products }) {
+export default function produtos({ products }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -28,7 +22,7 @@ export default function Destaques({ products }) {
   }
   return (
     <ContainerProduto>
-      <h2>Destaques</h2>
+      <Header />
       <Slider {...settings}>
         {products.map(product => {
           return (
@@ -59,4 +53,11 @@ export default function Destaques({ products }) {
       </Slider>
     </ContainerProduto>
   )
+}
+
+export async function getStaticProps() {
+  const res = await fetch(`https://limitless-cove-49173.herokuapp.com/products`)
+  const products = await res.json()
+
+  return { props: { products } }
 }

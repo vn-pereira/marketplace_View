@@ -19,8 +19,8 @@ const Home: React.FC<{ data: JSON }> = ({ data }) => {
       <Header />
       <BannerPrincipal />
       <Categorias />
-      <Destaques data={data} />
-      <Novidades data={data} />
+      <Destaques products={data} />
+      <Novidades products={data} />
     </Container>
   )
 }

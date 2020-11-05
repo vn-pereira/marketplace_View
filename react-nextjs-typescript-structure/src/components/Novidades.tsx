@@ -10,8 +10,14 @@ const NovidadesList = styled.div`
   h2 {
     padding: 30px;
   }
+  .product-item {
+    width: 300px;
+  }
+  .fotoProduto {
+    width: 300px;
+  }
 `
-export default function Novidades(props) {
+export default function Novidades({ products }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -23,20 +29,29 @@ export default function Novidades(props) {
     <NovidadesList>
       <h2>Novidades</h2>
       <Slider {...settings}>
-        {props.data.map(product => {
+        {products.map(product => {
           return (
             <div key={product._id}>
-              <h3
-                style={{
-                  color: '#fff',
-                  height: 150,
-                  width: 300,
-                  background: 'purple',
-                  padding: '20px'
-                }}
-              >
-                {product.name}
-              </h3>
+              <div className="product-item">
+                <figure>
+                  <img className="fotoProduto" src={product.images[1]} alt="" />
+                  <div className="pi-meta">
+                    <div className="pi-m-left">
+                      <a href={'/' + product._id}>
+                        <img src="/eye.png" alt="" />
+                        <p>ver</p>
+                      </a>
+                    </div>
+                  </div>
+                </figure>
+                <div className="product-info">
+                  <h6>{product.name}</h6>
+                  <p>{product.price}</p>
+                  <a href={'/carrinho'} className="site-btn btn-line">
+                    COMPRAR
+                  </a>
+                </div>
+              </div>
             </div>
           )
         })}
