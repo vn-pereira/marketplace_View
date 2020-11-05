@@ -45,7 +45,6 @@ const Categorias = () => {
           )
         })}
       </div>
-      <LoginPages/>
     </CategoryList>
   )
 }

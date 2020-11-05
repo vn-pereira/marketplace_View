@@ -2,26 +2,41 @@ import React from 'react'
 import {Form} from 'react-bootstrap';
 import {Col} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
+import { useForm } from "react-hook-form";
 
 export default function Register() {
+    const { register, handleSubmit, errors } = useForm();
+  
+    function onSubmit(data) {
+      console.log("Data submitted: ", data);
+    }
+  
     return (
-          <div>
-  <Form>
-  <Form.Row>
+    <Form onSubmit={handleSubmit(onSubmit)} noValidate>
+    <Form.Row>
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label>Email</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" />
+      <Form.Control type="email" placeholder="Enter email" ref={register({
+            required: "Enter your e-mail",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+              message: "Enter a valid e-mail address",
+            },
+          })}  />
+          {errors.email && <p className="error">{errors.email.message}</p>}
     </Form.Group>
+    
 
     <Form.Group as={Col} controlId="formGridPassword">
       <Form.Label>Password</Form.Label>
-      <Form.Control type="password" placeholder="Password" />
+      <Form.Control type="password" placeholder="Password" ref={register({ required: "Enter your password" })}/>
     </Form.Group>
-  </Form.Row>
+     {errors.password && <p className="error">{errors.password.message}</p>}
+    </Form.Row>
 
   <Form.Group controlId="formGridAddress1">
     <Form.Label>CPF</Form.Label>
-    <Form.Control placeholder="000-000-000-00" />
+    <Form.Control placeholder="000-000-000-00" ref={register({ required: "Enter your CPF" })}/>
   </Form.Group>
 
   <Form.Group controlId="formGridAddress2">
@@ -51,10 +66,9 @@ export default function Register() {
     <Form.Check type="checkbox" label="Accept terms of use"/>
   </Form.Group>
 
-  <Button variant="primary" type="submit">
+  <Button variant="primary" type="submit" className="btn btn-primary btn-lg btn-block">
     Submit
   </Button>
-</Form>
-        </div>
-    )
-}
+ </Form>
+     );
+  }
