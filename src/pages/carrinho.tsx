@@ -1,5 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from 'next/link'
+
+
+
 
 export default function carrinho({ product }) {
     return (
@@ -109,7 +113,7 @@ export default function carrinho({ product }) {
                       </div>
                     </div>
                   </div>
-                  <button className="site-btn btn-full">Fechar pedido</button>
+                  <Link href="/confirmacao"><button className="site-btn btn-full">Fechar pedido</button></Link>
                 </div>
               </div>
             </div>
