@@ -2,10 +2,15 @@
 /* eslint-disable no-use-before-define */
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import styled from 'styled-components'
+
+const BannerContainer = styled.div`
+  margin-top: 0px;
+`
 
 const BannerPrincipal = () => {
   return (
-    <div style={{ zIndex: 0 }}>
+    <BannerContainer>
       <Carousel>
         <Carousel.Item>
           <img
@@ -29,7 +34,7 @@ const BannerPrincipal = () => {
           />
         </Carousel.Item>
       </Carousel>
-    </div>
+    </BannerContainer>
   )
 }
 

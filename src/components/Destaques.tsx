@@ -2,45 +2,61 @@
 /* eslint-disable no-use-before-define */
 import React from 'react'
 import styled from 'styled-components'
+import Slider from 'react-slick'
 
-const destaques = [
-  { name: 'Produto 1', image_path: '' },
-  { name: 'Produto 2', image_path: '' },
-  { name: 'Produto 3', image_path: '' }
-]
-
-const DestaquesList = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
-  align-items: center;
-
-  .destaqueCard {
-    cursor: pointer;
-    text-align: center;
-    height: 250px;
-    width: calc(80vw / 3);
-    margin: 10px;
-    background: purple;
+const ContainerProduto = styled.div`
+  padding: 20px 40px;
+  text-align: center;
+  h2 {
+    padding: 30px;
   }
-  .destaques {
-    display: flex;
-    flex-wrap: wrap;
+  .product-item {
+    width: 300px;
+  }
+  .fotoProduto {
+    width: 300px;
   }
 `
-export default function Destaques() {
+
+export default function Destaques({ products }) {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 3
+  }
   return (
-    <DestaquesList>
+    <ContainerProduto>
       <h2>Destaques</h2>
-      <div className="destaques">
-        {destaques.map(destaque => {
+      <Slider {...settings}>
+        {products.map(product => {
           return (
-            <div className="destaqueCard">
-              <h3>{destaque.name}</h3>
+            <div key={product._id}>
+              <div className="product-item">
+                <figure>
+                  <img className="fotoProduto" src={product.images[1]} alt="" />
+                  <div className="pi-meta">
+                    <div className="pi-m-left">
+                      <a href={'/' + product._id}>
+                        <img src="/eye.png" alt="" />
+                        <p>ver</p>
+                      </a>
+                    </div>
+                  </div>
+                </figure>
+                <div className="product-info">
+                  <h6>{product.name}</h6>
+                  <p>{product.price}</p>
+                  <a href={'/carrinho'} className="site-btn btn-line">
+                    COMPRAR
+                  </a>
+                </div>
+              </div>
             </div>
           )
         })}
-      </div>
-    </DestaquesList>
+      </Slider>
+    </ContainerProduto>
   )
 }

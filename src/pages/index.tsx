@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // eslint-disable-next-line no-use-before-define
 import React from 'react'
 import Head from 'next/head'
@@ -9,7 +10,7 @@ import Novidades from '../components/Novidades'
 
 import { Container } from '../styles/pages/Home'
 
-const Home: React.FC = () => {
+const Home: React.FC<{ data: JSON }> = ({ data }) => {
   return (
     <Container>
       <Head>
@@ -18,10 +19,21 @@ const Home: React.FC = () => {
       <Header />
       <BannerPrincipal />
       <Categorias />
-      <Destaques />
-      <Novidades />
+      <Destaques products={data} />
+      <Novidades products={data} />
     </Container>
   )
+}
+
+export async function getStaticProps() {
+  const res = await fetch('https://limitless-cove-49173.herokuapp.com/products')
+  const data = await res.json()
+  console.log(data)
+  return {
+    props: {
+      data
+    }
+  }
 }
 
 export default Home

@@ -2,22 +2,20 @@
 /* eslint-disable no-use-before-define */
 import React from 'react'
 import styled from 'styled-components'
-
+import Slider from 'react-slick'
 const categories = [
   { name: 'Eletrônicos', image_path: '' },
   { name: 'Decoração', image_path: '' },
   { name: 'Roupas', image_path: '' },
   { name: 'Chocolates Premium', image_path: '' },
-  { name: 'Coffe Shop', image_path: '' }
-  // { name: 'Cosméticos', image_path: '' },
-  // { name: 'Presentes', image_path: '' }
+  { name: 'Coffe Shop', image_path: '' },
+  { name: 'Cosméticos', image_path: '' },
+  { name: 'Presentes', image_path: '' }
 ]
 
 const CategoryList = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
-  align-items: center;
+  padding: 20px 40px;
+
   .categoryCard {
     cursor: pointer;
     text-align: center;
@@ -26,23 +24,42 @@ const CategoryList = styled.div`
     margin: 10px;
     background: purple;
   }
-  .categories {
-    display: flex;
-    flex-wrap: wrap;
+  h2 {
+    padding: 30px;
+    text-align: center;
   }
 `
 const Categorias = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 3
+  }
   return (
     <CategoryList>
       <h2>Categorias</h2>
       <div className="categories">
-        {categories.map(category => {
-          return (
-            <div className="categoryCard">
-              <h3>{category.name}</h3>
-            </div>
-          )
-        })}
+        <Slider {...settings}>
+          {categories.map((categorie, index) => {
+            return (
+              <div key={index}>
+                <h3
+                  style={{
+                    color: '#fff',
+                    height: 150,
+                    width: 300,
+                    background: '#69779b',
+                    padding: '20px'
+                  }}
+                >
+                  {categorie.name}
+                </h3>
+              </div>
+            )
+          })}
+        </Slider>
       </div>
     </CategoryList>
   )

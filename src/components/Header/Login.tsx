@@ -1,17 +1,21 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable import/no-duplicates */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable no-use-before-define */
-import React from 'react'
 import styled from 'styled-components'
+import { Modal } from 'react-bootstrap'
+import { useState } from 'react'
+import SignUp from './SignUp'
+import LoginPages from '../LoginPages'
 
 const LoginButtons = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-right: 25px;
   width: 300px;
   button {
     cursor: pointer;
     width: 140px;
-    padding: 10px 25px;
+    padding: 5px 25px;
     font-weight: bold;
     font-size: 18px;
     border-radius: 5px;
@@ -21,6 +25,7 @@ const LoginButtons = styled.div`
   .login {
     background: purple;
     color: #fff;
+    margin-right: 10px;
     &:hover {
       background: yellow;
       color: #111;
@@ -37,11 +42,29 @@ const LoginButtons = styled.div`
 `
 
 const Login = () => {
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   return (
-    <LoginButtons>
-      <button className="login">Login</button>
-      <button className="signup">Sign Up</button>
-    </LoginButtons>
+    <div style={{ display: 'flex', width: 300 }}>
+      <LoginButtons>
+        <button className="login" onClick={handleShow}>
+          Login
+        </button>
+      </LoginButtons>
+      <SignUp />
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {' '}
+          <LoginPages />{' '}
+        </Modal.Body>
+      </Modal>
+    </div>
   )
 }
 
