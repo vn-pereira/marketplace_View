@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const ContainerProduto = styled.div`
 
@@ -51,6 +52,7 @@ export default function produtos({products}) {
             )
           })}
         </Slider>
+      <Footer />
   </ContainerProduto>
 
   )

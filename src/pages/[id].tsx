@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const ContainerItem = styled.div `
   .pt img {
@@ -17,6 +19,7 @@ const ContainerItem = styled.div `
 const item = ({product}) => {
   return (
     <ContainerItem>
+    <Header />
     <div className="page-area product-page spad">
       <div className="container">
         <div className="row">
@@ -45,7 +48,7 @@ const item = ({product}) => {
                     <i className="fa fa-star" />
                     <i className="fa fa-star is-fade" />
                   </div>
-                  <span>(4 reviews)</span>
+                  <span>(6 reviews)</span>
                 </div>
               </div>
               <p>{product[0].description}</p>
@@ -55,6 +58,7 @@ const item = ({product}) => {
         </div>
       </div>
     </div>
+    <Footer />
     </ContainerItem>
   )
 }
