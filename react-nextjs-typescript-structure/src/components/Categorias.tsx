@@ -26,6 +26,7 @@ const CategoryList = styled.div`
   }
   h2 {
     padding: 30px;
+    text-align: center;
   }
 `
 const Categorias = () => {
@@ -49,7 +50,7 @@ const Categorias = () => {
                     color: '#fff',
                     height: 150,
                     width: 300,
-                    background: 'purple',
+                    background: '#69779b',
                     padding: '20px'
                   }}
                 >

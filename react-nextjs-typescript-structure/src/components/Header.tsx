@@ -32,9 +32,10 @@ const Header = () => {
   return (
     <ContainerHeader>
       <ToggleMenu />
-      <Link href="/novapagina">
-        <h1>
-          <span style={{ color: '#fff' }}>Cool</span>Stuff
+      <Link href="/">
+        <h1 style={{ cursor: 'pointer' }}>
+          <span style={{ color: '#fff' }}>Cool</span>
+          <span style={{ color: '#69779B' }}>Stuff</span>
         </h1>
       </Link>
       <SearchBar />
