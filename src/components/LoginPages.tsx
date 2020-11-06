@@ -21,7 +21,7 @@ export default function LoginPages() {
         <div>
 <div className="box-parent-login">
   <div className="well bg-white box-login">
-    <form role="form" onSubmit={handleSubmit(onSubmit)}>
+    <form role="form" onSubmit={handleSubmit(onSubmit)} noValidate>
       <fieldset>
         <div className="form-group ls-login-user">
           <label htmlFor="userLogin">Usuário</label>

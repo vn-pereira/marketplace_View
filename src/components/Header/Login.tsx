@@ -3,7 +3,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Modal} from 'react-bootstrap';
-import {Button} from 'react-bootstrap';
 import {useState} from 'react';
 import Sign_upButton from './Sign_upButton';
 import LoginPages from '../LoginPages';
@@ -44,6 +43,7 @@ const Login = () => {
     <LoginButtons>
       <button className="login" onClick={handleShow}>Login</button>
     </LoginButtons>
+    
     <Sign_upButton/>
 
       <Modal show={show} onHide={handleClose}>
@@ -56,5 +56,5 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
 

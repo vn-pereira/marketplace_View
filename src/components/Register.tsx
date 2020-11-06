@@ -36,7 +36,15 @@ export default function Register() {
 
   <Form.Group controlId="formGridAddress1">
     <Form.Label>CPF</Form.Label>
-    <Form.Control placeholder="000-000-000-00" ref={register({ required: "Enter your CPF" })}/>
+    <Form.Control placeholder="000-000-000-00" onKeyUp={(event)=>{
+          if(!(event.key=='Backspace' || event.key=='Delete' || event.which == 8)){
+          if(event.target.value.length==2 || event.target.value.length==6 ){
+            event.target.value += "."
+        } else if (event.target.value.length== 10){
+            event.target.value += "-"
+        }
+    }
+    }}/>
   </Form.Group>
 
   <Form.Group controlId="formGridAddress2">
