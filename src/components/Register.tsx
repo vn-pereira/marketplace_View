@@ -16,27 +16,30 @@ export default function Register() {
     <Form.Row>
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label>Email</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" ref={register({
-            required: "Enter your e-mail",
+      <Form.Control type="email" placeholder="Digite seu email" name="email" ref={register({
+            required: "Entre com o seu e-mail",
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-              message: "Enter a valid e-mail address",
-            },
-          })}  />
+              message: "Digite um endereço de e-mail válido",
+            }, 
+          })}/>
           {errors.email && <p className="error">{errors.email.message}</p>}
+          {console.log(handleSubmit)}
     </Form.Group>
     
 
     <Form.Group as={Col} controlId="formGridPassword">
       <Form.Label>Password</Form.Label>
-      <Form.Control type="password" placeholder="Password" ref={register({ required: "Enter your password" })}/>
+      <Form.Control type="password" placeholder="Password" name="password" ref={register({ 
+        required: "Entre com a sua senha", 
+        minLength:{value:6, message:"Tamanho mínimo de 6 caracteres"} })}/>
     </Form.Group>
      {errors.password && <p className="error">{errors.password.message}</p>}
     </Form.Row>
 
   <Form.Group controlId="formGridAddress1">
     <Form.Label>CPF</Form.Label>
-    <Form.Control placeholder="000-000-000-00" onKeyUp={(event)=>{
+    <Form.Control type="number" placeholder="000-000-000-00" onKeyUp={(event)=>{
           if(!(event.key=='Backspace' || event.key=='Delete' || event.which == 8)){
           if(event.target.value.length==2 || event.target.value.length==6 ){
             event.target.value += "."
