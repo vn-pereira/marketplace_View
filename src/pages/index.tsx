@@ -18,7 +18,7 @@ const Home: React.FC<{ data: JSON }> = ({ data }) => {
       </Head>
       <Header />
       <BannerPrincipal />
-      <Categorias />
+      <Categorias data={data} />
       <Destaques products={data} />
       <Novidades products={data} />
     </Container>
@@ -28,7 +28,6 @@ const Home: React.FC<{ data: JSON }> = ({ data }) => {
 export async function getStaticProps() {
   const res = await fetch('https://limitless-cove-49173.herokuapp.com/products')
   const data = await res.json()
-  console.log(data)
   return {
     props: {
       data

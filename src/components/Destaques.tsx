@@ -23,7 +23,7 @@ export default function Destaques({ products }) {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 3
   }
   return (
@@ -32,16 +32,18 @@ export default function Destaques({ products }) {
       <Slider {...settings}>
         {products.map(product => {
           return (
-            <div key={product._id}>
+            <a href={'/' + product._id} key={product._id}>
               <div className="product-item">
                 <figure>
-                  <img className="fotoProduto" src={product.images[1]} alt="" />
+                  <img
+                    className="fotoProduto p-3 bg-white"
+                    src={product.images[0]}
+                    alt=""
+                  />
                   <div className="pi-meta">
                     <div className="pi-m-left">
-                      <a href={'/' + product._id}>
-                        <img src="/eye.png" alt="" />
-                        <p>ver</p>
-                      </a>
+                      <img src="/eye.png" alt="" />
+                      <p>ver</p>
                     </div>
                   </div>
                 </figure>
@@ -53,7 +55,7 @@ export default function Destaques({ products }) {
                   </a>
                 </div>
               </div>
-            </div>
+            </a>
           )
         })}
       </Slider>
