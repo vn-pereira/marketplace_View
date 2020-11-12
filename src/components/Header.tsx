@@ -28,7 +28,9 @@ const Header = () => {
     <ContainerHeader>
       <ToggleMenu />
       <Link href="/novapagina">
-        <Image src="/rocketseat.svg" height="40" width="200" className="link" />
+        <h1>
+          <span style={{ color: '#fff' }}>Cool</span>Stuff
+        </h1>
       </Link>
       <SearchBar />
       <Login />

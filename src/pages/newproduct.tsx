@@ -22,6 +22,7 @@ form{
         cursor: pointer;
         width: 140px;
         padding: 10px;
+        margin-left: 17px
     }
 }
 `
@@ -47,9 +48,8 @@ export default function newproduct() {
                 <NPInput title='Provider Id:' id='providerId' type='text' name='providerID'/>
                 <NPInput title='Product Name:' id='productName' type='text' name='name'/>
                 <NPInput title='Description:' id='description' type='text' name='description'/>
-                <NPInput title='Rating:' id='rating' type='text' name='price'/>
                 <NPInput title='Price:' id='price' type='text' name='price'/>
-                <NPInput title='Stock:' id='stock' type='number' name='stock'/>
+                <NPInput title='Stock:' id='stock' type='text' name='stock'/>
                 <button type='submit'>inserir produto</button>
             </form>
         </FormContainer>

@@ -1,12 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
+//import styled from 'styled-components'
 import Link from 'next/link'
+import Header from '../components/Header'
 
 
 
 
 export default function carrinho({ product }) {
     return (
+      <>
+      <Header></Header>
       <div className="page-area cart-page spad">
         <div className="container">
           <form className="checkout-form">
@@ -120,6 +123,7 @@ export default function carrinho({ product }) {
           </form>
         </div>
       </div>
+    </>
     )
 }
 

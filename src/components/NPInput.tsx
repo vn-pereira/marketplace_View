@@ -15,11 +15,15 @@ const InputContainer = styled.div`
 }
 `
 export default function NpForm({ ...props }) {
- 
   return (
-        <InputContainer>
-        <label htmlFor={props.id}>{props.title}</label>
-        <input type={props.type} id={props.id} name={props.name}required></input>
-        </InputContainer>
+    <>
+      <div className="container checkout-form">
+        <input type={props.type} placeholder={props.name} />
+      </div>
+    </>
   )
+}
+
+{
+  /* <InputContainer> <label htmlFor={props.id}>{props.title}</label> <input type={props.type} id={props.id} name={props.name}required></input> </InputContainer> */
 }
