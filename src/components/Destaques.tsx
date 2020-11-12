@@ -50,7 +50,7 @@ export default function Destaques({ products }) {
                 <div className="product-info">
                   <h6>{product.name}</h6>
                   <p>{product.price}</p>
-                  <a href={'/carrinho'} className="site-btn btn-line">
+                  <a href={`/carrinho/${product._id}`} className="site-btn btn-line">
                     COMPRAR
                   </a>
                 </div>

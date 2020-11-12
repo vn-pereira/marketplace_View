@@ -26,3 +26,7 @@ export default function NpForm({ ...props }) {
     </>
   )
 }
+
+{
+  /* <InputContainer> <label htmlFor={props.id}>{props.title}</label> <input type={props.type} id={props.id} name={props.name}required></input> </InputContainer> */
+}
