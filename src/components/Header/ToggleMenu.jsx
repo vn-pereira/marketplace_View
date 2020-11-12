@@ -59,6 +59,12 @@ const Menu = ({ open }) => {
         </span>
         Minhas vendas
       </a>
+      <a href="/fornecedor">
+        <span role="img" aria-label="fornecedor">
+          💁🏻‍♂️
+        </span>
+        Fornecedor
+      </a>
       <a href="/configuracoes">
         <span role="img" aria-label="about us">
           💁🏻‍♂️

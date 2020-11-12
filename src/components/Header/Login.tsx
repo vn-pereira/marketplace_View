@@ -23,7 +23,7 @@ const LoginButtons = styled.div`
     border: none;
   }
   .login {
-    background: purple;
+    background: #69779b;
     color: #fff;
     margin-right: 10px;
     &:hover {
