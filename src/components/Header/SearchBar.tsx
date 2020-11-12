@@ -4,26 +4,18 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Form = styled.form`
-  position: absolute;
-  top: 1.8rem;
-  left: 25%;
-  transform: translate(-50%, -50%);
   transition: all 1s;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 30px;
   background: white;
   box-sizing: border-box;
   border-radius: 25px;
-  border: 4px solid white;
   padding: 5px;
 
   input {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 42.5px;
-    line-height: 30px;
+    height: 22.5px;
+    line-height: 22.5px;
     outline: 0;
     border: 0;
     display: none;
@@ -34,16 +26,13 @@ const Form = styled.form`
 
   .fa {
     box-sizing: border-box;
-    padding: 10px;
-    width: 42.5px;
-    height: 42.5px;
-    position: absolute;
-    top: 0;
-    right: 0;
+    padding: 4px;
+    width: 25.5px;
+    height: 25.5px;
     border-radius: 50%;
     color: #07051a;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: all 1s;
   }
 
@@ -59,14 +48,19 @@ const Form = styled.form`
   &:hover .fa {
     background: #07051a;
     color: white;
+    transform: translate(650%, -100%);
   }
 `
 
 const SearchBar = () => {
+  const teste = () => {
+    console.log('teste')
+  }
+
   return (
     <Form action="">
       <input type="search" />
-      <i className="fa fa-search" />
+      <i className="fa fa-search" onClick={teste} />
     </Form>
   )
 }

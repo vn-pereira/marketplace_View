@@ -1,5 +1,8 @@
-﻿import React from 'react'
+﻿/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable no-use-before-define */
+import React from 'react'
 import styled from 'styled-components'
+
 const InputContainer = styled.div`
   display: flex;
   flex-direction: column;

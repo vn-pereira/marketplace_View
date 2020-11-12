@@ -1,15 +1,12 @@
 import React from 'react'
 //import styled from 'styled-components'
 import Link from 'next/link'
-import Header from '../components/Header'
-
-
-
+import Header from '../../components/Header'
 
 export default function carrinho({ product }) {
-    return (
-      <>
-      <Header></Header>
+  return (
+    <>
+      <Header />
       <div className="page-area cart-page spad">
         <div className="container">
           <form className="checkout-form">
@@ -84,10 +81,10 @@ export default function carrinho({ product }) {
                         </thead>
                         <tbody>
                           <tr>
-                            <td>{product.name}</td>
-                            <td>{product.price}</td>
+                            <td>{product[0].name}</td>
+                            <td>{product[0].price}</td>
                           </tr>
-                          
+
                           <tr className="cart-subtotal">
                             <td>Frete</td>
                             <td>Grátis</td>
@@ -96,7 +93,7 @@ export default function carrinho({ product }) {
                         <tfoot>
                           <tr className="order-total">
                             <th>Total</th>
-                            <th>{product.price}</th>
+                            <th>{product[0].price}</th>
                           </tr>
                         </tfoot>
                       </table>
@@ -116,7 +113,12 @@ export default function carrinho({ product }) {
                       </div>
                     </div>
                   </div>
-                  <Link href="/confirmacao"><button className="site-btn btn-full">Fechar pedido</button></Link>
+                  <Link href="/confirmacao">
+                    <button className="site-btn btn-full">Fechar pedido</button>
+                  </Link>
+                  <Link href="/">
+                    <button className="site-btn btn-full">Voltar</button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -124,12 +126,27 @@ export default function carrinho({ product }) {
         </div>
       </div>
     </>
-    )
+  )
 }
 
-export async function getStaticProps(params) {
-    const res = await fetch(`https://limitless-cove-49173.herokuapp.com/products`)
-    const products = await res.json()
-    const product = products.filter((product)=> { return product._id == params.id})
-    return { props: { product } }
-  }
+export async function getStaticProps({params}) {
+  const res = await fetch(`https://limitless-cove-49173.herokuapp.com/products`)
+  const products = await res.json()
+  const product = products.filter(product => {
+    return product._id === params.p
+  })
+ 
+  return { props: { product } }
+}
+
+export async function getStaticPaths() {
+  const res = await fetch('https://limitless-cove-49173.herokuapp.com/products')
+  const products = await res.json()
+
+  const paths = products.map((product) => ({
+  params: {p: product._id},
+   }))
+
+
+  return  {paths , fallback: false }
+}

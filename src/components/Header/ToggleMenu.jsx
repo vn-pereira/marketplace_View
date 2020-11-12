@@ -13,7 +13,6 @@ const StyledMenu = styled.nav`
   height: calc(100vh);
   text-align: left;
   padding: 2rem;
-  // position: absolute;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
@@ -24,11 +23,12 @@ const StyledMenu = styled.nav`
   }
 
   a {
-    font-size: 2rem;
+    width:140px
+    font-size: 1rem;
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;
-    letter-spacing: 0.5rem;
+    // letter-spacing: 0.5rem;
     color: #0d0c1d;
     text-decoration: none;
     transition: color 0.3s linear;
@@ -47,23 +47,23 @@ const StyledMenu = styled.nav`
 const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
-      <a href="/">
-        <span role="img" aria-label="about us">
-          💁🏻‍♂️
-        </span>
-        About us
-      </a>
-      <a href="/">
+      <a href="/minhas-compras">
         <span role="img" aria-label="price">
           💸
         </span>
-        Pricing
+        Minhas compras
       </a>
-      <a href="/">
+      <a href="/minhas-vendas">
         <span role="img" aria-label="contact">
           📩
         </span>
-        Contact
+        Minhas vendas
+      </a>
+      <a href="/configuracoes">
+        <span role="img" aria-label="about us">
+          💁🏻‍♂️
+        </span>
+        Configurações
       </a>
     </StyledMenu>
   )
