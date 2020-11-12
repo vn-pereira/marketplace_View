@@ -51,23 +51,22 @@ const FormContainer = styled.div`
 export default function newproduct() {
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = data => {
-    console.log(data)
-    // Axios.post('/api/create-product', {
-    //   providerID: '5f924a880d486000177b9b68',
-    //   name: data.name,
-    //   price: data.price,
-    //   stock: data.stock,
-    //   description: data.description,
-    //   category: data.category,
-    //   rating: data.rating,
-    //   images: data.images.split(',')
-    // })
-    //   .then(function (response) {
-    //     console.log(response)
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error)
-    //   })
+    Axios.post('/api/create-product', {
+      providerID: '5f924a880d486000177b9b68',
+      name: data.name,
+      price: data.price,
+      stock: data.stock,
+      description: data.description,
+      category: data.category,
+      rating: data.rating,
+      images: data.images.split(',')
+    })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
   }
   return (
     <>
